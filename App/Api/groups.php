@@ -1,5 +1,6 @@
 <?php
-namespace MyApp\App\Api;
+namespace App\Api;
+use \App\Database\Database;
 
 class Groups
 {

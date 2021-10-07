@@ -13,6 +13,11 @@ use \PDO;
         public function __construct($db){
             $this->conn = $db;
         }
+
+        /**
+    
+        * Read all from table groups
+        */
       public function read() {
           $query = 'SELECT * FROM
                 ' . $this->table;
@@ -23,7 +28,11 @@ use \PDO;
             }
 
 
-
+        /**
+    
+        * Read single entry from table groups
+     
+        */
 
         public function read_single(){
             $query = 'SELECT * FROM
@@ -44,7 +53,11 @@ use \PDO;
 
         }
 
-
+        /**
+    
+        * Create new entry in table groups
+     
+        */
         public function create(){
 
 
@@ -68,7 +81,11 @@ use \PDO;
             }
             
         }
-
+        /**
+    
+        * Update single entry from table groups
+     
+        */
         public function update(){
 
 
@@ -96,7 +113,11 @@ use \PDO;
             }
             
         }
-
+        /**
+    
+        * Delete single entry from table groups
+     
+        */
         public function delete(){
 
             $query = 'DELETE FROM ' . $this->table . ' WHERE id=:id';

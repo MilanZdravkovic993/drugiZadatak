@@ -1,13 +1,19 @@
 <?php
 namespace App\Database;
 use \App\Database\Database;
+use App\Models\Group;
 use \App\Models\Intern;
 use \App\Models\Mentor;
 require_once("../../vendor/autoload.php");
 
-
+        /**
+    
+        * Create random combinations of names and last names and populate db with them
+     
+        */
 $names=array("Joe","Marcus","Ivan","Jovan","Marco","Darko","Peter","Joshua","Lisa","Bart");
 $lastNames=array("Smith","Rangu","Paul","Anderson","Cartman","Ann","Zidane","Ronaldo","O'neil","Brayant");
+$groups = array("BackEnd1","BackEnd2","FrontEnd1","FrontEnd2");
 
 $database = new Database();
 $db = $database->connect();
@@ -38,6 +44,13 @@ for($i=0;$i<5;$i++)
     $mentor->groupId = rand(1,4);
     
     $mentor->create();
+}
+
+$group = new Group($db);
+for($i=0;$i<4;$i++)
+{
+    $group->name = $groups[$i];
+    $group->create();
 }
 
 ?>

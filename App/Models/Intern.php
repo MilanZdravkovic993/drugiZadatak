@@ -16,6 +16,12 @@ use \PDO;
         public function __construct($db){
             $this->conn = $db;
         }
+
+        /**
+    
+        * Read all from table interns
+     
+        */
       public function read() {
           $query = 'SELECT 
                 g.name as groupName,
@@ -36,7 +42,11 @@ use \PDO;
             }
 
 
-
+        /**
+    
+        * Read single entry from table interns
+     
+        */
 
         public function read_single(){
             $query = 'SELECT 
@@ -69,7 +79,11 @@ use \PDO;
 
         }
 
-
+        /**
+    
+        * Create new entry in table interns
+     
+        */
         public function create(){
 
 
@@ -99,7 +113,11 @@ use \PDO;
             }
             
         }
-
+        /**
+    
+        * Update single entry from table interns
+     
+        */
         public function update(){
 
 
@@ -134,7 +152,11 @@ use \PDO;
             }
             
         }
-
+        /**
+    
+        * Delete single entry from table interns
+     
+        */
         public function delete(){
 
             $query = 'DELETE FROM ' . $this->table . ' WHERE id=:id';

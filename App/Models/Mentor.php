@@ -4,6 +4,8 @@ namespace App\Models;
 use \App\Database\Database;
 use \PDO;
     class Mentor {
+
+    
         private $conn;
         private $table = 'mentors';
 
@@ -12,10 +14,19 @@ use \PDO;
         public $lastName;
         public $groupId;
         public $groupName;
-
+    /**
+    
+    * Class constructor 
+     
+    */
         public function __construct($db){
             $this->conn = $db;
         }
+        /**
+    
+        * Read all from table mentors
+     
+        */
       public function read() {
           $query = 'SELECT 
                 g.name as groupName,
@@ -34,7 +45,11 @@ use \PDO;
                 $stmt->execute();
                 return $stmt;
             }
-
+        /**
+    
+        * Read single entry from table mentors by id 
+     
+        */
         public function read_single(){
              $query = 'SELECT 
                 g.name as groupName,
@@ -65,7 +80,11 @@ use \PDO;
     
     
             }
-
+        /**
+    
+        * Create new entry in table mentor
+     
+        */
             public function create(){
 
 
@@ -95,7 +114,11 @@ use \PDO;
                 }
                 
             }
-
+        /**
+    
+        * Update single entry from table mentors
+     
+        */
             public function update(){
 
 
@@ -130,7 +153,11 @@ use \PDO;
                 }
                 
             }
-
+        /**
+    
+        * Delete one entry from table mentors
+     
+        */
             public function delete(){
 
                 $query = 'DELETE FROM ' . $this->table . ' WHERE id=:id';

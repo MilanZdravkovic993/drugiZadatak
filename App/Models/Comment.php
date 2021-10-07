@@ -4,8 +4,13 @@ namespace App\Models;
 use \App\Database\Database;
 use \App\Models\Intern;
 use \App\Models\Mentor;
+use IntlRuleBasedBreakIterator;
 use \PDO;
+
+
     class Comment {
+
+
         private $conn;
         private $table = 'comments';
 
@@ -43,7 +48,10 @@ use \PDO;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $this->id = $row['id'];
-            $this->name = $row['Name'];
+            $this->mentorId = $row['mentor_id'];
+            $this->internId = $row['intern_id'];
+            $this->comment = $row['Comment'];
+            $this->createdAt = $row['createdAt'];
 
 
 
@@ -64,10 +72,14 @@ use \PDO;
             $stmt = $this->conn->prepare($query);
 
 
-            $this->name = htmlspecialchars(strip_tags($this->name));
+            $this->comment = htmlspecialchars(strip_tags($this->comment));
             
 
-            $stmt->bindParam(':Name', $this->name);
+            $stmt->bindParam(':mentor_id', $this->mentorId);
+            $stmt->bindParam(':intern_id', $this->internId);
+            $stmt->bindParam(':Comment', $this->comment);
+            
+
             if($stmt->execute()){
                 return true;
             }
@@ -84,9 +96,9 @@ use \PDO;
             $query = 'UPDATE ' . $this->table . '
             
                 SET
-                  Name = :Name, 
-                WHERE
-                    id = :id';
+                   mentor_id = :mentor_id,
+                   intern_id = :intern_id,
+                   Comment = :Comment';
             
             $stmt = $this->conn->prepare($query);
 

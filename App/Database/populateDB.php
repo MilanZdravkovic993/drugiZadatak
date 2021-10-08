@@ -28,7 +28,7 @@ for($i=0;$i<10;$i++)
 
     $intern->firstName = $names[$first];
     $intern->lastName = $names[$second];
-    $intern->groupId = rand(1,4);
+    $intern->groupId = rand(0,3);
     
     $intern->create();
 }
@@ -41,7 +41,7 @@ for($i=0;$i<5;$i++)
 
     $mentor->firstName = $names[$first];
     $mentor->lastName = $names[$second];
-    $mentor->groupId = rand(1,4);
+    $mentor->groupId = rand(0,3);
     
     $mentor->create();
 }

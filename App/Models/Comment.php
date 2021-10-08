@@ -56,7 +56,15 @@ use \PDO;
 
 
         }
-
+        public function readInternComments() {
+            $query = 'SELECT * FROM
+                  ' . $this->table . ' WHERE intern_id = ?';
+  
+                  $stmt = $this->conn->prepare($query);
+                  $stmt->bindParam(1,$this->internId);
+                  $stmt->execute();
+                  return $stmt;
+              }
 
         public function create(){
 
@@ -98,14 +106,18 @@ use \PDO;
                 SET
                    mentor_id = :mentor_id,
                    intern_id = :intern_id,
-                   Comment = :Comment';
+                   Comment = :Comment
+                   WHERE
+                    id = :id';
+            
             
             $stmt = $this->conn->prepare($query);
 
-            $this->Name = htmlspecialchars(strip_tags($this->name));
-            $this->id = htmlspecialchars(strip_tags($this->id));
+            $this->comment = htmlspecialchars(strip_tags($this->comment));
 
-            $stmt->bindParam(':Name', $this->name);
+            $stmt->bindParam(':mentor_id', $this->mentorId);
+            $stmt->bindParam(':intern_id', $this->internId);
+            $stmt->bindParam(':Comment', $this->comment);
             $stmt->bindParam(':id', $this->id);
 
             if($stmt->execute()){

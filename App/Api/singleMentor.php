@@ -23,4 +23,4 @@ $mentor_arr = array(
     'groupName' => $mentor->groupName
 );
 
-echo (json_encode($mentor_arr));
+print_r (json_encode($mentor_arr));

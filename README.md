@@ -45,6 +45,7 @@ Instructions
                     notice: Mentor can post a comment for a intern only if they are in the same group
 
 Read:
+                   
                     -interns localhost/drugizadatak/App/Api/interns.php takes no parameters
                     returns list od all interns as JSON array
 
@@ -103,8 +104,9 @@ Update:
                         "intern_id":"2",
                         "Comment":"Comment text"
                     }
-                    
+
 Delete:
+                    
                     -deleteIntern localhost/drugizadatak/App/Api/deleteIntern.php takes one parameter id example localhost/drugizadatak/App/Api/deleteIntern.php?id=1
                     deletes intern with that id from database
 

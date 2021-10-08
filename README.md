@@ -73,6 +73,7 @@ Read:
                     returns group with that id and all Interns and Mentors that are in that group
 
 Update:
+                    
                     -updateIntern localhost/drugizadatak/App/Api/updateIntern.php takes PUT requests and accepts JSON as body
                      example:
                     {
@@ -80,25 +81,29 @@ Update:
                         "lastName": "Zdravkovic",
                         "group_id": "16"
                     }
-                     -updateMentor localhost/drugizadatak/App/Api/updateMentor.php takes PUT requests and accepts JSON as body
+                    
+                    -updateMentor localhost/drugizadatak/App/Api/updateMentor.php takes PUT requests and accepts JSON as body
                      example:
                     {
                         "firstName": "Milan",
                         "lastName": "Zdravkovic",
                         "group_id": "16"
                     }
-                     -updateGroup localhost/drugizadatak/App/Api/updateGroup.php takes PUT requests and accepts JSON as body
+                    
+                    -updateGroup localhost/drugizadatak/App/Api/updateGroup.php takes PUT requests and accepts JSON as body
                      example:
                     {
                        "name": "FrontEnd1"
                     }
-                     -updateComment localhost/drugizadatak/App/Api/updateComment.php takes PUT requests and accepts JSON as body
+                    
+                    -updateComment localhost/drugizadatak/App/Api/updateComment.php takes PUT requests and accepts JSON as body
                      example:
                     {
                         "mentor_id":"1",
                         "intern_id":"2",
                         "Comment":"Comment text"
                     }
+                    
 Delete:
                     -deleteIntern localhost/drugizadatak/App/Api/deleteIntern.php takes one parameter id example localhost/drugizadatak/App/Api/deleteIntern.php?id=1
                     deletes intern with that id from database

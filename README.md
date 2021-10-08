@@ -6,7 +6,9 @@ Instructions
 
  endpoints : 
 
+
  Create:
+                    
                     - createIntern localhost/drugizadatak/App/Api/createIntern.php takes POST requests and accepts JSON as body
                     example:
                     {
@@ -14,6 +16,8 @@ Instructions
                         "lastName": "Zdravkovic",
                         "group_id": "16"
                     }
+                    
+                    
                     - createMentor localhost/drugizadatak/App/Api/createMentor.php takes POST requests and accepts JSON as body
                     example:
                     {
@@ -21,21 +25,25 @@ Instructions
                         "lastName": "Zdravkovic",
                         "group_id": "16"
                     }
-                      - createGroup localhost/drugizadatak/App/Api/createGroup.php takes POST requests and accepts JSON as body
+                    
+                    
+                    - createGroup localhost/drugizadatak/App/Api/createGroup.php takes POST requests and accepts JSON as body
                     example:
                     {
                         "name": "FrontEnd1"
                     }
-                      - createComment localhost/drugizadatak/App/Api/createComment.php takes POST requests and accepts JSON as body
+                    
+                    
+                    - createComment localhost/drugizadatak/App/Api/createComment.php takes POST requests and accepts JSON as body
                     example:
                     {
                         "mentor_id":"1",
                         "intern_id":"2",
                         "Comment":"Comment text"
                     }
+                    
                     notice: Mentor can post a comment for a intern only if they are in the same group
 
-                    
 Read:
                     -interns localhost/drugizadatak/App/Api/interns.php takes no parameters
                     returns list od all interns as JSON array

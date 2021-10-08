@@ -93,13 +93,13 @@ use \PDO;
             $query = 'UPDATE ' . $this->table . '
             
                 SET
-                  Name = :Name, 
+                  name = :Name
                 WHERE
                     id = :id';
             
             $stmt = $this->conn->prepare($query);
 
-            $this->Name = htmlspecialchars(strip_tags($this->name));
+            $this->name = htmlspecialchars(strip_tags($this->name));
             $this->id = htmlspecialchars(strip_tags($this->id));
 
             $stmt->bindParam(':Name', $this->name);

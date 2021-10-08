@@ -79,6 +79,15 @@ use \PDO;
 
         }
 
+        public function readInternsFromGroup() {
+            $query = 'SELECT * FROM interns WHERE group_id = ?';
+  
+                  $stmt = $this->conn->prepare($query);
+                  $stmt->bindParam(1,$this->groupId);
+                  $stmt->execute();
+                  return $stmt;
+              }
+
         /**
     
         * Create new entry in table interns

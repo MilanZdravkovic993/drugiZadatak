@@ -48,7 +48,7 @@ use \PDO;
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $this->id = $row['id'];
-            $this->name = $row['Name'];
+            $this->name = $row['name'];
 
 
 

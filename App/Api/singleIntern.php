@@ -17,7 +17,7 @@ $comment = new Comment($db);
 $intern->id = isset($_GET['id']) ? $_GET['id'] : die();
 $comment->internId = ($_GET['id']);
 $intern->read_single();
-$result = $comment->readInternComments();
+
 $intern_arr = array(
     'id' => $intern->id,
     'firstName' => $intern->firstName,
@@ -26,7 +26,7 @@ $intern_arr = array(
     'groupName' => $intern->groupName
 );
 
-
+$result = $comment->readInternComments();
 $num = $result->rowCount();
 
 if($num > 0 ){

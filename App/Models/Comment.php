@@ -58,7 +58,7 @@ use \PDO;
         }
         public function readInternComments() {
             $query = 'SELECT * FROM
-                  ' . $this->table . ' WHERE intern_id = ?';
+                  ' . $this->table . ' WHERE intern_id = ? ORDER BY createdAt DESC';
   
                   $stmt = $this->conn->prepare($query);
                   $stmt->bindParam(1,$this->internId);
